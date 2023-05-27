@@ -6,11 +6,7 @@ require("dotenv").config();
 
 const options = {
   method: "GET",
-  url: "https://daily-petrol-diesel-lpg-cng-fuel-prices-in-india.p.rapidapi.com/v1/fuel-prices/today/india/maharashtra",
-  headers: {
-    "X-RapidAPI-Key": process.env.KEY,
-    "X-RapidAPI-Host": process.env.HOST,
-  },
+  url: "https://long-trench-coat-lion.cyclic.app/diesel-prices",
 };
 
 app.get("/fetch-diesel-prices", async (req, res) => {
@@ -18,7 +14,6 @@ app.get("/fetch-diesel-prices", async (req, res) => {
     let response = await axios.request(options);
 
     let dataToBeSent = response.data;
-    dataToBeSent.fuel = dataToBeSent.fuel.diesel;
 
     console.log(dataToBeSent);
 
@@ -29,7 +24,7 @@ app.get("/fetch-diesel-prices", async (req, res) => {
 
     console.log("State wise Diesel Prices sent successfully.");
     res.status(200).json({
-      message: "Diesel prices sent successfully.",
+      message: "Diesel prices sent to end point successfully.",
       data: dataToBeSent,
     });
   } catch (error) {
@@ -42,6 +37,6 @@ app.get("/fetch-diesel-prices", async (req, res) => {
 });
 
 // Start the server
-app.listen(3000, () => {
-  console.log("Server started on port 3000");
+app.listen(5000, () => {
+  console.log("Server started on port 5000");
 });
