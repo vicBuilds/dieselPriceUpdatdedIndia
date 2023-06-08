@@ -6,7 +6,7 @@ require("dotenv").config();
 
 const options = {
   method: "GET",
-  url: "https://www.ndtv.com/fuel-prices/diesel-price-in-all-state",
+  url: "./././.....////....",
 };
 
 app.get("/fetch-diesel-prices", async (req, res) => {
